@@ -7,16 +7,16 @@ package modelo;
 
 /**
  *
- * @author slondonoq
+ * @author Faes PC
  */
-public class Item {
-    public String name;
-    public String usage;
-    public String effect;
-    public int effectAmount;
-    public long value;
+public class Potion extends Item{
+    
+    
+    private String raceDetermination;
 
-    public Item() {
+    public Potion() {
+        
+        raceDetermination = "???";
         name = "???";
         usage = "None";
         effect = "None";
@@ -24,12 +24,23 @@ public class Item {
         value = 0;
     }
 
-    public Item(String name, String usage, String effect, int effectAmount, long value) {
+    public Potion(String raceDetermination, String name, String usage, String effect, int effectAmount, long value) {
+        super(name, usage, effect, effectAmount, value);
+        this.raceDetermination = raceDetermination;
         this.name = name;
         this.usage = usage;
         this.effect = effect;
         this.effectAmount = effectAmount;
         this.value = value;
+        
+    }
+
+    public String getRaceDetermination() {
+        return raceDetermination;
+    }
+
+    public void setRaceDetermination(String raceDetermination) {
+        this.raceDetermination = raceDetermination;
     }
 
     public String getName() {
@@ -72,4 +83,11 @@ public class Item {
         this.value = value;
     }
     
+    
+    
+    
+
+    
 }
+
+
