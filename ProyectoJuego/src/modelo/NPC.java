@@ -18,7 +18,7 @@ public class NPC {
     private int damage; 
     private boolean state; 
     private int gold; 
-    private ArrayList inventory; 
+    private ArrayList <Item> inventory; 
 
     public NPC() {
         this.name = "???";
