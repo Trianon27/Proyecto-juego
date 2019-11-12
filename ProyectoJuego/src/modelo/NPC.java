@@ -11,53 +11,29 @@ import java.util.ArrayList;
  *
  * @author srodr
  */
-public class NPC {
-    private String name; 
-    private int life; 
-    private int defense; 
-    private int damage; 
-    private boolean state; 
+public class NPC extends Hero {
+    
+    private String state; 
     private int gold; 
-    private ArrayList <Item> inventory; 
+    private String kind; 
+    private String work; 
 
     public NPC() {
-        this.name = "???";
-        this.life = 0;
-        this.defense = 0;
-        this.damage = 0;
-        this.state = false;
+         this.state = "???";
         this.gold = 0;
-        this.inventory = new ArrayList();
-        
+        this.kind = "???";
+        this.work = "???";
+
     }
 
-    public NPC(String name, int life, int defense, int damage, boolean state, int gold, ArrayList inventory) {
-        this.name = name;
-        this.life = life;
-        this.defense = defense;
-        this.damage = damage;
+    public NPC(String state, int gold, String kind, String work) {
         this.state = state;
         this.gold = gold;
-        this.inventory = inventory;
+        this.kind = kind;
+        this.work = work;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public int getLife() {
-        return life;
-    }
-
-    public int getDefense() {
-        return defense;
-    }
-
-    public int getDamage() {
-        return damage;
-    }
-
-    public boolean isState() {
+    public String getState() {
         return state;
     }
 
@@ -65,27 +41,15 @@ public class NPC {
         return gold;
     }
 
-    public ArrayList getInventory() {
-        return inventory;
+    public String getKind() {
+        return kind;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getWork() {
+        return work;
     }
 
-    public void setLife(int life) {
-        this.life = life;
-    }
-
-    public void setDefense(int defense) {
-        this.defense = defense;
-    }
-
-    public void setDamage(int damage) {
-        this.damage = damage;
-    }
-
-    public void setState(boolean state) {
+    public void setState(String state) {
         this.state = state;
     }
 
@@ -93,11 +57,14 @@ public class NPC {
         this.gold = gold;
     }
 
-    public void setInventory(ArrayList inventory) {
-        this.inventory = inventory;
+    public void setKind(String kind) {
+        this.kind = kind;
     }
 
-  
+    public void setWork(String work) {
+        this.work = work;
+    }
+
     
     
     
