@@ -14,59 +14,50 @@ import java.util.ArrayList;
 public class NPC extends Hero {
     
     private String state; 
-    private int gold; 
-    private String kind; 
-    private String work; 
+  
+    private String side; 
+    private String profession; 
 
     public NPC() {
-         this.state = "???";
-        this.gold = 0;
-        this.kind = "???";
-        this.work = "???";
-
+       state = state;
+       side = side;
+       profession = profession;
+        
+        
     }
 
-    public NPC(String state, int gold, String kind, String work) {
+    public NPC(String state, String side, String profession) {
         this.state = state;
-        this.gold = gold;
-        this.kind = kind;
-        this.work = work;
+        this.side = side;
+        this.profession = profession;
     }
 
     public String getState() {
         return state;
     }
 
-    public int getGold() {
-        return gold;
+    public String getSide() {
+        return side;
     }
 
-    public String getKind() {
-        return kind;
-    }
-
-    public String getWork() {
-        return work;
+    public String getProfession() {
+        return profession;
     }
 
     public void setState(String state) {
         this.state = state;
     }
 
-    public void setGold(int gold) {
-        this.gold = gold;
+    public void setSide(String side) {
+        this.side = side;
     }
 
-    public void setKind(String kind) {
-        this.kind = kind;
-    }
-
-    public void setWork(String work) {
-        this.work = work;
+    public void setProfession(String profession) {
+        this.profession = profession;
     }
 
     
-    
+  
     
     
     
