@@ -5,25 +5,20 @@
  */
 package modelo;
 
-import java.util.ArrayList;
-
 /**
  *
  * @author srodr
  */
 public class NPC extends Hero {
     
-    private String state; 
-  
+    private String state;
     private String side; 
     private String profession; 
 
     public NPC() {
-       state = state;
-       side = side;
-       profession = profession;
-        
-        
+       state = "Neutral";
+       side = "Ally";
+       profession = "Farmer";   
     }
 
     public NPC(String state, String side, String profession) {
@@ -55,10 +50,5 @@ public class NPC extends Hero {
     public void setProfession(String profession) {
         this.profession = profession;
     }
-
-    
-  
-    
-    
-    
+   
 }
