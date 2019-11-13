@@ -13,36 +13,45 @@ import java.util.ArrayList;
 public class Hero {
     private String race;
     private String name;
-    private long health;
-    private int mana;
+    private long maxHealth;
+    private long currentHealth;
+    private long maxMana;
+    private long currentMana;
     private int meleeDamage;
     private int magicDamage;
     private int defense;
     private int magicDefense;
     private ArrayList<Item> inventory;
+    private long gold;
 
     public Hero() {
         race = "Human";
         name = "John Doe";
-        health = 1000;
-        mana = 200;
+        maxHealth = 1000;
+        currentHealth = 1000;
+        maxMana = 200;
+        currentMana = 200;
         meleeDamage = 10;
         magicDamage = 5;
         defense = 5;
         magicDefense = 0;
         inventory = new ArrayList();
+        gold = 1000;
     }
 
-    public Hero(String race, String name, long health, int mana, int meleeDamage, int magicDamage, int defense, int magicDefense, ArrayList<Item> inventory) {
+    public Hero(String race, String name, long maxHealth, long currentHealth, long maxMana, long currentMana, int meleeDamage, int magicDamage, int defense, int magicDefense, ArrayList<Item> inventory, long gold) {
         this.race = race;
         this.name = name;
-        this.health = health;
-        this.mana = mana;
+        this.maxHealth = maxHealth;
+        this.currentHealth = currentHealth;
+        this.maxMana = maxMana;
+        this.currentMana = currentMana;
         this.meleeDamage = meleeDamage;
         this.magicDamage = magicDamage;
         this.defense = defense;
         this.magicDefense = magicDefense;
         this.inventory = inventory;
+        this.gold = gold;
     }
 
     public String getRace() {
@@ -61,20 +70,36 @@ public class Hero {
         this.name = name;
     }
 
-    public long getHealth() {
-        return health;
+    public long getMaxHealth() {
+        return maxHealth;
     }
 
-    public void setHealth(long health) {
-        this.health = health;
+    public void setMaxHealth(long maxHealth) {
+        this.maxHealth = maxHealth;
+    }
+    
+    public long getCurrentHealth() {
+        return currentHealth;
     }
 
-    public int getMana() {
-        return mana;
+    public void setCurrentHealth(long currentHealth) {
+        this.currentHealth = currentHealth;
     }
 
-    public void setMana(int mana) {
-        this.mana = mana;
+    public long getMaxMana() {
+        return maxMana;
+    }
+
+    public void setMaxMana(long maxMana) {
+        this.maxMana = maxMana;
+    }
+    
+    public long getCurrentMana() {
+        return currentMana;
+    }
+
+    public void setCurrentMana(long currentMana) {
+        this.currentMana = currentMana;
     }
 
     public int getMeleeDamage() {
@@ -117,4 +142,11 @@ public class Hero {
         this.inventory = inventory;
     }
     
+    public long getGold () {
+        return gold;
+    }
+    
+    public void setGold (long gold){
+        this.gold = gold;
+    }
 }
