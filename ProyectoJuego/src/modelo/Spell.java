@@ -11,24 +11,30 @@ package modelo;
  */
 public class Spell {
     
-    private String Type;
+    private String type;
     private int manaCost;
-    private int magicDamage; 
+    private int magicDamage;
+    private String effect;
+    private double effectModifier;
 
     public Spell() {
-        this.Type = "????";
-        this.manaCost = 0;
-        this.magicDamage = 0;
+        type = "????";
+        manaCost = 0;
+        magicDamage = 0;
+        effect = "None";
+        effectModifier = 0;
     }
 
-    public Spell(String Type, int manaCost, int magicDamage) {
-        this.Type = Type;
+    public Spell(String type, int manaCost, int magicDamage, String effect, double effectModifier) {
+        this.type = type;
         this.manaCost = manaCost;
         this.magicDamage = magicDamage;
+        this.effect = effect;
+        this.effectModifier = effectModifier;
     }
 
     public String getType() {
-        return Type;
+        return type;
     }
 
     public int getManaCost() {
@@ -38,9 +44,17 @@ public class Spell {
     public int getMagicDamage() {
         return magicDamage;
     }
-
+    
+    public String getEffect(){
+        return effect;
+    }
+    
+    public double getEffectModifier(){
+        return effectModifier;
+    }
+    
     public void setType(String Type) {
-        this.Type = Type;
+        this.type = type;
     }
 
     public void setManaCost(int manaCost) {
@@ -51,10 +65,12 @@ public class Spell {
         this.magicDamage = magicDamage;
     }
     
+    public void setEffect(String effect) {
+        this.effect = effect;
+    }
     
-    
-    
-    
-    
+    public void setEffectModifier(double effectModifier){
+        this.effectModifier = effectModifier;
+    }
     
 }
