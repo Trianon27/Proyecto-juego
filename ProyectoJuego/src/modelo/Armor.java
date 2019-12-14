@@ -14,19 +14,22 @@ public class Armor {
     private int baseDefense;
     private String wholeSetEffect;
     private double wholeSetEffectBonus;
+    private String piece;
 
     public Armor() {
         name = "???";
         baseDefense = 0;
         wholeSetEffect = "None";
         wholeSetEffectBonus = 0;
+        piece = "???";
     }
 
-    public Armor(String name, int baseDefense, String wholeSetEffect, double wholeSetEffectBonus) {
+    public Armor(String name, int baseDefense, String wholeSetEffect, double wholeSetEffectBonus, String piece) {
         this.name = name;
         this.baseDefense = baseDefense;
         this.wholeSetEffect = wholeSetEffect;
         this.wholeSetEffectBonus = wholeSetEffectBonus;
+        this.piece = piece;
     }
 
     public String getName() {
@@ -59,6 +62,14 @@ public class Armor {
 
     public void setWholeSetEffectBonus(double wholeSetEffectBonus) {
         this.wholeSetEffectBonus = wholeSetEffectBonus;
+    }
+
+    public String getPiece() {
+        return piece;
+    }
+
+    public void setPiece(String piece) {
+        this.piece = piece;
     }
     
 }
