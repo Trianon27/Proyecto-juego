@@ -22,6 +22,7 @@ public class Hero {
     private int defense;
     private int magicDefense;
     private ArrayList<Item> inventory;
+    private Armor[] armorSpaces;
     private long gold;
 
     public Hero() {
@@ -36,10 +37,11 @@ public class Hero {
         defense = 5;
         magicDefense = 0;
         inventory = new ArrayList();
+        armorSpaces = new Armor[4];
         gold = 1000;
     }
 
-    public Hero(String race, String name, long maxHealth, long currentHealth, long maxMana, long currentMana, int meleeDamage, int magicDamage, int defense, int magicDefense, ArrayList<Item> inventory, long gold) {
+    public Hero(String race, String name, long maxHealth, long currentHealth, long maxMana, long currentMana, int meleeDamage, int magicDamage, int defense, int magicDefense, ArrayList<Item> inventory, Armor[] armorSpaces, long gold) {
         this.race = race;
         this.name = name;
         this.maxHealth = maxHealth;
@@ -51,6 +53,7 @@ public class Hero {
         this.defense = defense;
         this.magicDefense = magicDefense;
         this.inventory = inventory;
+        this.armorSpaces = armorSpaces;
         this.gold = gold;
     }
 
@@ -148,5 +151,13 @@ public class Hero {
     
     public void setGold (long gold){
         this.gold = gold;
+    }
+
+    public Armor[] getArmorSpaces() {
+        return armorSpaces;
+    }
+
+    public void setArmorSpaces(Armor[] armorSpaces) {
+        this.armorSpaces = armorSpaces;
     }
 }
