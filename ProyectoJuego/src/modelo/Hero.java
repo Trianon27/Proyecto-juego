@@ -21,7 +21,7 @@ public class Hero {
     private int magicDamage;
     private int defense;
     private int magicDefense;
-    private ArrayList<Item> inventory;
+    private Item [] inventory;
     private Armor[] armorSpaces;
     private long gold;
 
@@ -36,12 +36,12 @@ public class Hero {
         magicDamage = 5;
         defense = 5;
         magicDefense = 0;
-        inventory = new ArrayList();
+        inventory = new Item[7];
         armorSpaces = new Armor[4];
         gold = 1000;
     }
 
-    public Hero(String race, String name, long maxHealth, long currentHealth, long maxMana, long currentMana, int meleeDamage, int magicDamage, int defense, int magicDefense, ArrayList<Item> inventory, Armor[] armorSpaces, long gold) {
+    public Hero(String race, String name, long maxHealth, long currentHealth, long maxMana, long currentMana, int meleeDamage, int magicDamage, int defense, int magicDefense, Item[] inventory, Armor[] armorSpaces, long gold) {
         this.race = race;
         this.name = name;
         this.maxHealth = maxHealth;
@@ -137,11 +137,11 @@ public class Hero {
         this.magicDefense = magicDefense;
     }
 
-    public ArrayList<Item> getInventory() {
+    public  Item[] getInventory() {
         return inventory;
     }
 
-    public void setInventory(ArrayList<Item> inventory) {
+    public void setInventory(Item[] inventory) {
         this.inventory = inventory;
     }
     
@@ -159,5 +159,13 @@ public class Hero {
 
     public void setArmorSpaces(Armor[] armorSpaces) {
         this.armorSpaces = armorSpaces;
+    }
+
+    public int setMeleeDamage() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public Item[] setInventory() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

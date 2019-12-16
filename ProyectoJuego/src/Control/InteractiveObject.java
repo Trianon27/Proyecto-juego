@@ -8,6 +8,9 @@ package Control;
 
 
 import java. util. ArrayList;
+import modelo.Hero;
+import modelo.Item;
+
 
 /*
  *
@@ -15,51 +18,68 @@ import java. util. ArrayList;
  */
 public class InteractiveObject {
     
-    private  int   storage; 
-    private String Type; 
-    private ArrayList inventory; 
-
+   private Hero _hero;
+ 
+           
     public InteractiveObject() {
-        storage = 0;
-        Type = "???";
-        inventory = new ArrayList() ;
-        
+        _hero=new Hero();
     }
 
-    public InteractiveObject(int storage, String Type, ArrayList inventory) {
-        this.storage = storage;
-        this.Type = Type;
-        this.inventory = inventory;
+    public InteractiveObject(Hero _hero) {
+        this._hero = _hero;
     }
 
-    public int getStorage() {
-        return storage;
+    public Hero getHero() {
+        return _hero;
     }
 
-    public String getType() {
-        return Type;
+    public void setHero(Hero _hero) {
+        this._hero = _hero;
     }
+   
 
-    public ArrayList getInventory() {
-        return inventory;
-    }
+  private void equipItem(Item object){
+    
+  Item[] heroObject = _hero.getInventory();
+  
+ //the 1 and 2 slot will be weapons
+  //the 3 to 8 slot will be spells, the slots will define the equipment of the hero.
+  int slot=0;
+  switch (object.getType() ){
+      case "principalWeapon": 
+         slot=1;
+         break;
+      case "secudaryWeapon":
+         slot=2;
+         break;
+      case "spell":
+          for (int i = 3; i <=7;i++){
+          slot = i; 
+          break;
+          }
+    
+    //duda sobre el slot      
+   if (null== heroObject[slot]){
+    
+       heroObject[slot]= object; 
 
-    public void setStorage(int storage) {
-        this.storage = storage;
-    }
+  }
+  }
+  }
+  private void ItemBonus (Item object){
+  _hero.setMeleeDamage(_hero.getMeleeDamage()+object.getDamage());
 
-    public void setType(String Type) {
-        this.Type = Type;
-    }
+  
+  
+  }
+  
+  
+  
 
-    public void setInventory(ArrayList inventory) {
-        this.inventory = inventory;
-    }
+}  
     
     
     
     
     
-    
-    
-}
+
