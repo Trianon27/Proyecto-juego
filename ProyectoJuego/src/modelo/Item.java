@@ -11,7 +11,7 @@ package modelo;
  */
 public class Item {
     public String name;
-    public String usage;
+  
     public String effect;
     private String race;
     private String quality;
@@ -21,11 +21,11 @@ public class Item {
     private int magicDamage;
     private int damage;
     public long value;
-    private double effectModifier;    
+    private long effectModifier;    
 
     public Item() {
         this.name = "None";
-        this.usage = "None";
+       
         this.effect = "None";
         this.race = "None";
         this.quality = "None";
@@ -40,9 +40,9 @@ public class Item {
         
     }
 
-    public Item(String name, String usage, String effect, String race, String quality, String type, int effectAmount, int manaCost, int magicDamage, int damage, long value, double effectModifier) {
+    public Item(String name, String effect, String race, String quality, String type, int effectAmount, int manaCost, int magicDamage, int damage, long value, long effectModifier) {
         this.name = name;
-        this.usage = usage;
+       
         this.effect = effect;
         this.race = race;
         this.quality = quality;
@@ -59,9 +59,7 @@ public class Item {
         return name;
     }
 
-    public String getUsage() {
-        return usage;
-    }
+   
 
     public String getEffect() {
         return effect;
@@ -99,7 +97,7 @@ public class Item {
         return value;
     }
 
-    public double getEffectModifier() {
+    public long getEffectModifier() {
         return effectModifier;
     }
 
@@ -107,9 +105,7 @@ public class Item {
         this.name = name;
     }
 
-    public void setUsage(String usage) {
-        this.usage = usage;
-    }
+   
 
     public void setEffect(String effect) {
         this.effect = effect;
@@ -147,7 +143,7 @@ public class Item {
         this.value = value;
     }
 
-    public void setEffectModifier(double effectModifier) {
+    public void setEffectModifier(long effectModifier) {
         this.effectModifier = effectModifier;
     }
 

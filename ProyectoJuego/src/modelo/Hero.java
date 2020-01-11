@@ -36,7 +36,7 @@ public class Hero {
         magicDamage = 5;
         defense = 5;
         magicDefense = 0;
-        inventory = new Item[7];
+        inventory = new Item[6];
         armorSpaces = new Armor[4];
         gold = 1000;
     }
