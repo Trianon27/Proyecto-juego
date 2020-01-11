@@ -31,7 +31,7 @@ public class Weapon {
 
     
     public void equipItem (Item heroI){
-        Item weapons []= hero.getInventory(); 
+        Item weapons []= hero.getMainInventory(); 
         String race= hero.getRace(); 
         String weaponRace= heroI.getRace();
         int slot=0; 
@@ -47,6 +47,7 @@ public class Weapon {
                case "Secunday_Weapon" : slot=2;  
                      if (weapons[slot]==null){
                          weapons[slot]=heroI;
+                         weaponEffect(heroI);
                      } else{}
                      
                                break; 
@@ -55,8 +56,9 @@ public class Weapon {
                      slot= 3;
                      do {  
                         if (weapons[slot]==null){
-                           weapons[slot]= heroI; 
-                        }
+                           weapons[slot]= heroI;
+                            spellEffect(heroI);
+                        }else {}
                         slot++; 
                      } while (slot<7);
                                break;         
@@ -66,9 +68,9 @@ public class Weapon {
         
     }
     
-    public void weaponEffect (Item heroW){
-            hero.setMeleeDamage(hero.getMeleeDamage()+heroW.getDamage());
-            hero.setMagicDamage(hero.getMagicDamage()+heroW.getMagicDamage());  
+    public void weaponEffect (Item weapon){
+            hero.setMeleeDamage(hero.getMeleeDamage()+weapon.getDamage());
+            hero.setMagicDamage(hero.getMagicDamage()+weapon.getMagicDamage());  
     }
     
     public void spellEffect ( Item heroS){
@@ -82,18 +84,60 @@ public class Weapon {
                hero.setMeleeDamage((int) (hero.getMeleeDamage()+heroS.getEffectModifier()));
                
                break;
-       
-       
-       
-       
        }
-    
-    
     }
     
+    // This is gonna be the part of unequip weapons and remove the weapons effects
+    //as to spells , their effects are momentany so they only will have the removment 
+    //of the object. 
+    
+    //the objects arent gonna be deleted, they will be transfered from the main inventory
+    //To the secundary inventory.
+    
+
+    
+    public void unequipWeapon(Item heroU){
+          Item weapons[]= hero.getMainInventory(); 
+
+          
+          switch (heroU.getType()){
+                case "Principal_Weapon": 
+                    transfer(hero.getMainInventory());
+                    removeEffect(heroU);
+                               break;
+                               
+               case "Secunday_Weapon" : 
+                    transfer(hero.getMainInventory());
+                    removeEffect(heroU);   
+                               break;  
+                               
+                 case "spell": 
+                    transfer(hero.getMainInventory());
+                     
+                               break;         
+           } 
 
     }
     
+    public void transfer (Item inventory[]){
+            
+            Item secondInventory[]= hero.getSecundaryInventory();
+            for (int i=0; i<secondInventory.length; i++){
+                    if (secondInventory[i]==null){
+                       inventory[i]=secondInventory[i];
+                    } else {}
+            }
+    }
+    
+    public void removeEffect(Item weapon){
+            hero.setMeleeDamage(hero.getMeleeDamage()-weapon.getDamage());
+            hero.setMagicDamage(hero.getMagicDamage()-weapon.getMagicDamage());   
+    
+    }
+
+    }
+
+
     
     
     

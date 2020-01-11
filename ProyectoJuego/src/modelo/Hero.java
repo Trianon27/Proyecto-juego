@@ -21,7 +21,8 @@ public class Hero {
     private int magicDamage;
     private int defense;
     private int magicDefense;
-    private Item [] inventory;
+    private Item [] mainInventory;
+    private Item [] secundaryInventory;
     private Armor[] armorSpaces;
     private long gold;
 
@@ -36,12 +37,14 @@ public class Hero {
         magicDamage = 5;
         defense = 5;
         magicDefense = 0;
-        inventory = new Item[6];
+        mainInventory = new Item[6];
+        secundaryInventory= new Item[10];
         armorSpaces = new Armor[4];
         gold = 1000;
+        
     }
 
-    public Hero(String race, String name, long maxHealth, long currentHealth, long maxMana, long currentMana, int meleeDamage, int magicDamage, int defense, int magicDefense, Item[] inventory, Armor[] armorSpaces, long gold) {
+    public Hero(String race, String name, long maxHealth, long currentHealth, long maxMana, long currentMana, int meleeDamage, int magicDamage, int defense, int magicDefense, Item[] mainInventory, Item[] secundaryInventory, Armor[] armorSpaces, long gold) {
         this.race = race;
         this.name = name;
         this.maxHealth = maxHealth;
@@ -52,10 +55,14 @@ public class Hero {
         this.magicDamage = magicDamage;
         this.defense = defense;
         this.magicDefense = magicDefense;
-        this.inventory = inventory;
+        this.mainInventory = mainInventory;
+        this.secundaryInventory = secundaryInventory;
         this.armorSpaces = armorSpaces;
         this.gold = gold;
     }
+
+    
+    
 
     public String getRace() {
         return race;
@@ -137,13 +144,22 @@ public class Hero {
         this.magicDefense = magicDefense;
     }
 
-    public  Item[] getInventory() {
-        return inventory;
+    public Item[] getMainInventory() {
+        return mainInventory;
     }
 
-    public void setInventory(Item[] inventory) {
-        this.inventory = inventory;
+    public Item[] getSecundaryInventory() {
+        return secundaryInventory;
     }
+
+    public void setMainInventory(Item[] mainInventory) {
+        this.mainInventory = mainInventory;
+    }
+
+    public void setSecundaryInventory(Item[] secundaryInventory) {
+        this.secundaryInventory = secundaryInventory;
+    }
+
     
     public long getGold () {
         return gold;
@@ -160,6 +176,12 @@ public class Hero {
     public void setArmorSpaces(Armor[] armorSpaces) {
         this.armorSpaces = armorSpaces;
     }
+    
+    
+    
+    
+    
+    
 
     public int setMeleeDamage() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
