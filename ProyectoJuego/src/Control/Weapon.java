@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Control;
 
 import modelo.Hero;
@@ -28,18 +24,22 @@ public class Weapon {
         this.hero = hero;
     }
     
-
+// We equip the hero
     
     public void equipItem (Item heroI){
+        //First we have to verify if the weapon or the item is the same class of the hero.
+        // if not the hero wouldnt equip the weapon. 
         Item weapons []= hero.getMainInventory(); 
         String race= hero.getRace(); 
         String weaponRace= heroI.getRace();
         int slot=0; 
         if (weaponRace==race){
            switch (heroI.getType()){
+               //we check if the inventory is empty in the specified slot 
                case "Principal_Weapon": slot=1;
                      if (weapons[slot]==null){
                          weapons[slot]=heroI;
+                         // if it is empty we equip and aplly the effects of the weapon.
                          weaponEffect(heroI);
                      } else{}
 
@@ -47,6 +47,7 @@ public class Weapon {
                case "Secunday_Weapon" : slot=2;  
                      if (weapons[slot]==null){
                          weapons[slot]=heroI;
+                         // if it is empty we equip and aplly the effects of the weapon.
                          weaponEffect(heroI);
                      } else{}
                      
@@ -57,22 +58,25 @@ public class Weapon {
                      do {  
                         if (weapons[slot]==null){
                            weapons[slot]= heroI;
+                         // if it is empty we equip and aplly the effects of the spell.
                             spellEffect(heroI);
                         }else {}
                         slot++; 
                      } while (slot<7);
                                break;         
            } 
-           
-        }
+         
+        }else{}
         
     }
     
+    //When is a weapon que apply damage and magic damage, bro.
     public void weaponEffect (Item weapon){
             hero.setMeleeDamage(hero.getMeleeDamage()+weapon.getDamage());
             hero.setMagicDamage(hero.getMagicDamage()+weapon.getMagicDamage());  
     }
     
+    //When we apply the spell effects, may vary according the type of spell.
     public void spellEffect ( Item heroS){
        switch (heroS.getEffect()){
            case "Health": 
@@ -119,6 +123,7 @@ public class Weapon {
 
     }
     
+    //We check if the secundary inventory has slots to deposite the item that hero will remove.
     public void transfer (Item inventory[]){
             
             Item secondInventory[]= hero.getSecundaryInventory();
@@ -128,7 +133,7 @@ public class Weapon {
                     } else {}
             }
     }
-    
+    // wew remove the effects of the heroes. 
     public void removeEffect(Item weapon){
             hero.setMeleeDamage(hero.getMeleeDamage()-weapon.getDamage());
             hero.setMagicDamage(hero.getMagicDamage()-weapon.getMagicDamage());   
