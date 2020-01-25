@@ -22,6 +22,7 @@ public class Item {
     private int damage;
     public long value;
     private long effectModifier;    
+    private boolean consumable;
 
     public Item() {
         name = "None";
@@ -36,9 +37,10 @@ public class Item {
         damage = 0;
         value = 0;
         effectModifier = 0;
+        consumable = false;
     }
 
-    public Item(String name, int amount, String effect, String race, String quality, String type, int effectAmount, int manaCost, int magicDamage, int damage, long value, long effectModifier) {
+    public Item(String name, int amount, String effect, String race, String quality, String type, int effectAmount, int manaCost, int magicDamage, int damage, long value, long effectModifier, boolean consumable) {
         this.name = name;
         this.amount = amount;
         this.effect = effect;
@@ -51,6 +53,7 @@ public class Item {
         this.damage = damage;
         this.value = value;
         this.effectModifier = effectModifier;
+        this.consumable = consumable;
     }
 
     public String getName() {
@@ -147,6 +150,14 @@ public class Item {
 
     public void setEffectModifier(long effectModifier) {
         this.effectModifier = effectModifier;
+    }
+
+    public boolean isConsumable() {
+        return consumable;
+    }
+
+    public void setConsumable(boolean consumable) {
+        this.consumable = consumable;
     }
 
 }
