@@ -10,9 +10,9 @@ package modelo;
  * @author slondonoq
  */
 public class Item {
-    public String name;
-  
-    public String effect;
+    private String name;
+    private int amount;
+    private String effect;
     private String race;
     private String quality;
     private String type;
@@ -24,25 +24,23 @@ public class Item {
     private long effectModifier;    
 
     public Item() {
-        this.name = "None";
-       
-        this.effect = "None";
-        this.race = "None";
-        this.quality = "None";
-        this.type = "None";
-        this.effectAmount = 0;
-        this.manaCost = 0;
-        this.magicDamage = 0;
-        this.damage = 0;
-        this.value = 0;
-        this.effectModifier = 0;
-        
-        
+        name = "None";
+        amount = 1;
+        effect = "None";
+        race = "None";
+        quality = "None";
+        type = "None";
+        effectAmount = 0;
+        manaCost = 0;
+        magicDamage = 0;
+        damage = 0;
+        value = 0;
+        effectModifier = 0;
     }
 
-    public Item(String name, String effect, String race, String quality, String type, int effectAmount, int manaCost, int magicDamage, int damage, long value, long effectModifier) {
+    public Item(String name, int amount, String effect, String race, String quality, String type, int effectAmount, int manaCost, int magicDamage, int damage, long value, long effectModifier) {
         this.name = name;
-       
+        this.amount = amount;
         this.effect = effect;
         this.race = race;
         this.quality = quality;
@@ -59,7 +57,13 @@ public class Item {
         return name;
     }
 
-   
+    public int getAmount() {
+        return amount;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
 
     public String getEffect() {
         return effect;
@@ -105,8 +109,6 @@ public class Item {
         this.name = name;
     }
 
-   
-
     public void setEffect(String effect) {
         this.effect = effect;
     }
@@ -146,17 +148,5 @@ public class Item {
     public void setEffectModifier(long effectModifier) {
         this.effectModifier = effectModifier;
     }
-
-    public Object setType() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public int setDamage() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    
-
-
 
 }
