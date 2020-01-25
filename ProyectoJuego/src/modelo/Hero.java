@@ -21,7 +21,7 @@ public class Hero {
     private int magicDamage;
     private int defense;
     private int magicDefense;
-    private Item [] mainInventory;
+    private ArrayList<Item> mainInventory;
     private Item [] secondaryInventory;
     private Armor[] armorSpaces;
     private long gold;
@@ -37,14 +37,14 @@ public class Hero {
         magicDamage = 5;
         defense = 5;
         magicDefense = 0;
-        mainInventory = new Item[6];
+        mainInventory = new ArrayList<Item>();
         secondaryInventory= new Item[10];
         armorSpaces = new Armor[4];
         gold = 1000;
         
     }
 
-    public Hero(String race, String name, long maxHealth, long currentHealth, long maxMana, long currentMana, int meleeDamage, int magicDamage, int defense, int magicDefense, Item[] mainInventory, Item[] secondaryInventory, Armor[] armorSpaces, long gold) {
+    public Hero(String race, String name, long maxHealth, long currentHealth, long maxMana, long currentMana, int meleeDamage, int magicDamage, int defense, int magicDefense, ArrayList<Item> mainInventory, Item[] secondaryInventory, Armor[] armorSpaces, long gold) {
         this.race = race;
         this.name = name;
         this.maxHealth = maxHealth;
@@ -141,7 +141,7 @@ public class Hero {
         this.magicDefense = magicDefense;
     }
 
-    public Item[] getMainInventory() {
+    public ArrayList<Item> getMainInventory() {
         return mainInventory;
     }
 
@@ -149,7 +149,7 @@ public class Hero {
         return secondaryInventory;
     }
 
-    public void setMainInventory(Item[] mainInventory) {
+    public void setMainInventory(ArrayList<Item> mainInventory) {
         this.mainInventory = mainInventory;
     }
 
