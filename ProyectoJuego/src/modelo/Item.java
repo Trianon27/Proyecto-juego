@@ -21,7 +21,7 @@ public class Item {
     private int magicDamage;
     private int damage;
     public long value;
-    private long effectModifier;    
+    private boolean inCooldown;    
     private boolean consumable;
 
     public Item() {
@@ -36,11 +36,11 @@ public class Item {
         magicDamage = 0;
         damage = 0;
         value = 0;
-        effectModifier = 0;
+        inCooldown = false;
         consumable = false;
     }
 
-    public Item(String name, int amount, String effect, String race, String quality, String type, int effectAmount, int manaCost, int magicDamage, int damage, long value, long effectModifier, boolean consumable) {
+    public Item(String name, int amount, String effect, String race, String quality, String type, int effectAmount, int manaCost, int magicDamage, int damage, long value, boolean inCooldown, boolean consumable) {
         this.name = name;
         this.amount = amount;
         this.effect = effect;
@@ -52,7 +52,7 @@ public class Item {
         this.magicDamage = magicDamage;
         this.damage = damage;
         this.value = value;
-        this.effectModifier = effectModifier;
+        this.inCooldown = inCooldown;
         this.consumable = consumable;
     }
 
@@ -104,8 +104,8 @@ public class Item {
         return value;
     }
 
-    public long getEffectModifier() {
-        return effectModifier;
+    public boolean isInCooldown() {
+        return inCooldown;
     }
 
     public void setName(String name) {
@@ -148,8 +148,8 @@ public class Item {
         this.value = value;
     }
 
-    public void setEffectModifier(long effectModifier) {
-        this.effectModifier = effectModifier;
+    public void setInCooldown(boolean inCooldown) {
+        this.inCooldown = inCooldown;
     }
 
     public boolean isConsumable() {
