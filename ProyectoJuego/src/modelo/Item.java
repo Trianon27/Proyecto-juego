@@ -21,7 +21,8 @@ public class Item {
     private int magicDamage;
     private int damage;
     public long value;
-    private boolean inCooldown;    
+    private boolean inCooldown; 
+    private long cooldownSecs;
     private boolean consumable;
 
     public Item() {
@@ -37,10 +38,11 @@ public class Item {
         damage = 0;
         value = 0;
         inCooldown = false;
+        cooldownSecs = 0;
         consumable = false;
     }
 
-    public Item(String name, int amount, String effect, String race, String quality, String type, int effectAmount, int manaCost, int magicDamage, int damage, long value, boolean inCooldown, boolean consumable) {
+    public Item(String name, int amount, String effect, String race, String quality, String type, int effectAmount, int manaCost, int magicDamage, int damage, long value, boolean inCooldown, long cooldownSecs, boolean consumable) {
         this.name = name;
         this.amount = amount;
         this.effect = effect;
@@ -52,8 +54,17 @@ public class Item {
         this.magicDamage = magicDamage;
         this.damage = damage;
         this.value = value;
+        this.cooldownSecs = cooldownSecs;
         this.inCooldown = inCooldown;
         this.consumable = consumable;
+    }
+
+    public long getCooldownSecs() {
+        return cooldownSecs;
+    }
+
+    public void setCooldownSecs(long cooldownSecs) {
+        this.cooldownSecs = cooldownSecs;
     }
 
     public String getName() {
