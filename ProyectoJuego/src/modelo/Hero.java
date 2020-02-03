@@ -25,6 +25,9 @@ public class Hero {
     private Item [] secondaryInventory;
     private Armor[] armorSpaces;
     private long gold;
+    private String action;
+    private String state; 
+    private String target; 
 
     public Hero() {
         race = "Human";
@@ -41,10 +44,12 @@ public class Hero {
         secondaryInventory= new Item[10];
         armorSpaces = new Armor[4];
         gold = 1000;
-        
+        action= "neutral";
+        state= "alive";  
+        target= "enemy";
     }
 
-    public Hero(String race, String name, long maxHealth, long currentHealth, long maxMana, long currentMana, int meleeDamage, int magicDamage, int defense, int magicDefense, ArrayList<Item> mainInventory, Item[] secondaryInventory, Armor[] armorSpaces, long gold) {
+    public Hero(String race, String name, long maxHealth, long currentHealth, long maxMana, long currentMana, int meleeDamage, int magicDamage, int defense, int magicDefense, ArrayList<Item> mainInventory, Item[] secondaryInventory, Armor[] armorSpaces, long gold, String action, String state, String target) {
         this.race = race;
         this.name = name;
         this.maxHealth = maxHealth;
@@ -59,6 +64,9 @@ public class Hero {
         this.secondaryInventory = secondaryInventory;
         this.armorSpaces = armorSpaces;
         this.gold = gold;
+        this.action= action;
+        this.state=state; 
+        this.target=target;
     }
 
     public String getRace() {
@@ -173,6 +181,32 @@ public class Hero {
     public void setArmorSpaces(Armor[] armorSpaces) {
         this.armorSpaces = armorSpaces;
     }
+
+    public String getAction() {
+        return action;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setAction(String action) {
+        this.action = action;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public String getTarget() {
+        return target;
+    }
+
+    public void setTarget(String target) {
+        this.target = target;
+    }
+    
+    
 
     public Item[] getSecundaryInventory() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

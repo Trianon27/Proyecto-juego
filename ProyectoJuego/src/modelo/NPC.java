@@ -11,24 +11,24 @@ package modelo;
  */
 public class NPC extends Hero {
     
-    private String state;
+   
     private String side; 
     private String profession; 
+    private int help;   
+    
 
     public NPC() {
-       state = "Neutral";
+       
        side = "Ally";
-       profession = "Farmer";   
+       profession = "Farmer"; 
+       help=100; 
     }
 
-    public NPC(String state, String side, String profession) {
-        this.state = state;
+    public NPC( String side, String profession, int help) {
+       
         this.side = side;
         this.profession = profession;
-    }
-
-    public String getState() {
-        return state;
+        this.help=help;
     }
 
     public String getSide() {
@@ -39,10 +39,6 @@ public class NPC extends Hero {
         return profession;
     }
 
-    public void setState(String state) {
-        this.state = state;
-    }
-
     public void setSide(String side) {
         this.side = side;
     }
@@ -50,5 +46,14 @@ public class NPC extends Hero {
     public void setProfession(String profession) {
         this.profession = profession;
     }
+
+    public int getHelp() {
+        return help;
+    }
+
+    public void setHelp(int help) {
+        this.help = help;
+    }
    
+    
 }
