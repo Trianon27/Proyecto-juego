@@ -173,4 +173,8 @@ public class Hero {
     public void setArmorSpaces(Armor[] armorSpaces) {
         this.armorSpaces = armorSpaces;
     }
+
+    public Item[] getSecundaryInventory() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
