@@ -45,8 +45,6 @@ public class Ambiente extends javax.swing.JFrame {
             }
         });
 
-        hero.setIcon(new javax.swing.ImageIcon("C:\\Users\\Leand\\Desktop\\witch.gif")); // NOI18N
-
         javax.swing.GroupLayout panelLayout = new javax.swing.GroupLayout(panel);
         panel.setLayout(panelLayout);
         panelLayout.setHorizontalGroup(
