@@ -45,6 +45,8 @@ public class Ambiente extends javax.swing.JFrame {
             }
         });
 
+        hero.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyectojuego/witch.gif"))); // NOI18N
+
         javax.swing.GroupLayout panelLayout = new javax.swing.GroupLayout(panel);
         panel.setLayout(panelLayout);
         panelLayout.setHorizontalGroup(
@@ -52,14 +54,14 @@ public class Ambiente extends javax.swing.JFrame {
             .addGroup(panelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(hero)
-                .addContainerGap(672, Short.MAX_VALUE))
+                .addContainerGap(572, Short.MAX_VALUE))
         );
         panelLayout.setVerticalGroup(
             panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(hero)
-                .addContainerGap(384, Short.MAX_VALUE))
+                .addContainerGap(284, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
