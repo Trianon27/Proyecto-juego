@@ -37,25 +37,23 @@ public class Weapon {
         if (weaponRace==race){
            switch (heroI.getType()){
                //we check if the inventory is empty in the specified slot 
-               case "Principal_Weapon": slot=1;
+               case "Weapon": slot=0;
                      if (weapons[slot]==null){
                          weapons[slot]= heroI;
                          // if it is empty we equip and aplly the effects of the weapon.
                          weaponEffect(heroI);
-                     } else{}
+                     } else{ 
+                         slot=1;
+                         if (weapons[slot]==null){
+                         weapons[slot]= heroI;
+                         // if it is empty we equip and aplly the effects of the weapon.
+                         weaponEffect(heroI);
+                        } else{}}
 
                                break;
-               case "Secunday_Weapon" : slot=2;  
-                     if (weapons[slot]==null){
-                         weapons[slot]= heroI;
-                         // if it is empty we equip and aplly the effects of the weapon.
-                         weaponEffect(heroI);
-                     } else{}
-                     
-                               break; 
-               
+ 
                  case "spell": 
-                     slot= 3;
+                     slot= 2;
                      do {  
                         if (weapons[slot]==null){
                            weapons[slot]=heroI;
@@ -63,7 +61,7 @@ public class Weapon {
                             spellEffect(heroI);
                         }else {}
                         slot++; 
-                     } while (slot<7);
+                     } while (slot<6);
                                break;         
            } 
          

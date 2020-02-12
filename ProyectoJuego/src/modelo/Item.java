@@ -15,6 +15,7 @@ public class Item {
     private String effect;
     private String race;
     private String quality;
+    
     private String type;
     public int effectAmount;
     private int manaCost;
